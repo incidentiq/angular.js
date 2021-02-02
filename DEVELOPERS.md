@@ -1,4 +1,4 @@
-# Developing AngularJS
+# Developing AngularIQ
 
 * [Development Setup](#setup)
 * [Running Tests](#tests)
@@ -8,12 +8,12 @@
 
 ## <a name="setup"> Development Setup
 
-This document describes how to set up your development environment to build and test AngularJS, and
+This document describes how to set up your development environment to build and test AngularIQ, and
 explains the basic mechanics of using `git`, `node`, `yarn` and `grunt`.
 
 ### Installing Dependencies
 
-Before you can build AngularJS, you must install and configure the following dependencies on your
+Before you can build AngularIQ, you must install and configure the following dependencies on your
 machine:
 
 * [Git](http://git-scm.com/): The [Github Guide to
@@ -39,35 +39,35 @@ machine:
   but you can also add the grunt command-line tool globally (with `yarn global add grunt-cli`), which allows
   you to leave out the `yarn` prefix for all our grunt commands.
 
-### Forking AngularJS on Github
+### Forking AngularIQ on Github
 
-To contribute code to AngularJS, you must have a GitHub account so you can push code to your own
-fork of AngularJS and open Pull Requests in the [GitHub Repository][github].
+To contribute code to AngularIQ, you must have a GitHub account so you can push code to your own
+fork of AngularIQ and open Pull Requests in the [GitHub Repository][github].
 
 To create a Github account, follow the instructions [here](https://github.com/signup/free).
 Afterwards, go ahead and [fork](http://help.github.com/forking) the
-[main AngularJS repository][github].
+[main AngularIQ repository][github].
 
 
-### Building AngularJS
+### Building AngularIQ
 
-To build AngularJS, you clone the source code repository and use Grunt to generate the non-minified
-and minified AngularJS files:
+To build AngularIQ, you clone the source code repository and use Grunt to generate the non-minified
+and minified AngularIQ files:
 
 ```shell
 # Clone your Github repository:
 git clone https://github.com/<github username>/angular.js.git
 
-# Go to the AngularJS directory:
+# Go to the AngularIQ directory:
 cd angular.js
 
-# Add the main AngularJS repository as an upstream remote to your repository:
+# Add the main AngularIQ repository as an upstream remote to your repository:
 git remote add upstream "https://github.com/angular/angular.js.git"
 
 # Install JavaScript dependencies:
 yarn install
 
-# Build AngularJS:
+# Build AngularIQ:
 yarn grunt package
 ```
 
@@ -80,9 +80,9 @@ directories:
 * `angular-<version>.zip` — The complete zip file, containing all of the release build
 artifacts.
 
-* `angular.js` / `angular.min.js` — The regular and minified core AngularJS script file.
+* `angular.js` / `angular.min.js` — The regular and minified core AngularIQ script file.
 
-* `angular-*.js` / `angular-*.min.js` — All other AngularJS module script files.
+* `angular-*.js` / `angular-*.min.js` — All other AngularIQ module script files.
 
 * `docs/` — A directory that contains a standalone version of the docs
   (same as served in `docs.angularjs.org`).
@@ -101,7 +101,7 @@ HTTP server. For this purpose, we have made available a local web server based o
    ```text
    http://localhost:8000/
    ```
-   By default, it serves the contents of the AngularJS project directory.
+   By default, it serves the contents of the AngularIQ project directory.
 
 3. To access the locally served docs, visit this URL:
    ```text
@@ -118,7 +118,7 @@ and minified AngularIQ files:
 # Install JavaScript dependencies:
 yarn install
 
-# Build AngularJS:
+# Build AngularIQ:
 yarn grunt package
 
 # Publish to npm
@@ -187,7 +187,7 @@ yarn grunt --help
 
 ### <a name="e2e-tests"></a> Running the End-to-end Test Suite
 
-AngularJS's end to end tests are run with Protractor. Simply run:
+AngularIQ's end to end tests are run with Protractor. Simply run:
 
 ```shell
 yarn grunt test:e2e
