@@ -1,12 +1,14 @@
 {
-  "name": "angular",
+  "name": "@incidentiq/angulariq",
+  "version": "2.0.1",
+  "description": "Incident IQ next generation of angular",
   "license": "MIT",
   "branchVersion": "^1.8.0",
   "branchPattern": "1.8.*",
   "distTag": "next",
   "repository": {
     "type": "git",
-    "url": "https://github.com/angular/angular.js.git"
+    "url": "https://github.com/incidentiq/angularIQ.git"
   },
   "engines": {
     "node": ">=12.14.1",
@@ -40,7 +42,7 @@
     "google-code-prettify": "1.0.1",
     "grunt": "^1.0.1",
     "grunt-bump": "^0.8.0",
-    "grunt-cli": "^1.2.0",
+    "grunt-cli": "^1.3.2",
     "grunt-contrib-clean": "^1.0.0",
     "grunt-contrib-compress": "^1.3.0",
     "grunt-contrib-connect": "^1.0.2",

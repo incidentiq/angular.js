@@ -37,13 +37,13 @@ Contribute
 --------------------
 
 We've set up a separate document for our
-[contribution guidelines](https://github.com/angular/angular.js/blob/master/CONTRIBUTING.md).
+[contribution guidelines](https://github.com/incidentiq/angulariq/blob/master/CONTRIBUTING.md).
 
 Develop
 --------------------
 
 We've set up a separate document for
-[developers](https://github.com/angular/angular.js/blob/master/DEVELOPERS.md).
+[developers](https://github.com/incidentiq/angulariq/blob/master/DEVELOPERS.md).
 
 
 [![Analytics](https://ga-beacon.appspot.com/UA-8594346-11/angular.js/README.md?pixel)](https://github.com/igrigorik/ga-beacon)
@@ -104,3 +104,4 @@ AngularJS has Dependency Injection, i.e. it takes care of providing all the nece
 to its controllers and services whenever required. This helps in making the AngularJS code ready for
 unit testing by making use of mock dependencies created and injected. This makes AngularJS more
 modular and easily testable thus in turn helping a team create more robust applications.
+

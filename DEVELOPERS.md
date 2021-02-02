@@ -108,6 +108,23 @@ HTTP server. For this purpose, we have made available a local web server based o
    http://localhost:8000/build/docs/
    ```
 
+
+### Publishing AngularIQ
+
+To publish AngularIQ, you clone the source code repository and use Grunt to generate the non-minified
+and minified AngularIQ files:
+
+```shell
+# Install JavaScript dependencies:
+yarn install
+
+# Build AngularJS:
+yarn grunt package
+
+# Publish to npm
+npm publish --access public
+```
+
 ## <a name="tests"> Running Tests
 
 ### <a name="unit-tests"></a> Running the Unit Test Suite
@@ -188,7 +205,7 @@ To ensure consistency throughout the source code, keep these rules in mind as yo
   out the existing source code and see the section about [writing documentation](#documentation)
 * With the exceptions listed below, we follow the rules contained in
   [Google's JavaScript Style Guide][js-style-guide]:
-    * **Do not use namespaces**: Instead,  wrap the entire AngularJS code base in an anonymous
+    * **Do not use namespaces**: Instead,  wrap the entire AngularIQ code base in an anonymous
       closure and export our API explicitly rather than implicitly.
     * Wrap all code at **100 characters**.
     * Instead of complex inheritance hierarchies, we **prefer simple objects**. We use prototypal
@@ -197,7 +214,7 @@ To ensure consistency throughout the source code, keep these rules in mind as yo
     * To write concise code that can be better minified, we **use aliases internally** that map to
       the external API. See our existing code to see what we mean.
     * We **don't go crazy with type annotations** for private internal APIs unless it's an internal
-      API that is used throughout AngularJS. The best guidance is to do what makes the most sense.
+      API that is used throughout AngularIQ. The best guidance is to do what makes the most sense.
 
 ### Specific topics
 
@@ -229,7 +246,7 @@ The `$compile:badrestrict` error is a good example for a well-defined `minErr`:
 
 We have very precise rules over how our git commit messages can be formatted.  This leads to **more
 readable messages** that are easy to follow when looking through the **project history**.  But also,
-we use the git commit messages to **generate the AngularJS change log**.
+we use the git commit messages to **generate the AngularIQ change log**.
 
 The commit message formatting can be added using a typical git workflow or through the use of a CLI
 wizard ([Commitizen](https://github.com/commitizen/cz-cli)). To use the wizard, run `yarn run commit`
@@ -300,17 +317,17 @@ A detailed explanation can be found in this [document][commit-message-format].
 
 ## <a name="documentation"></a> Writing Documentation
 
-The AngularJS project uses a form of [jsdoc](http://usejsdoc.org/) called ngdoc for all of its code
+The AngularIQ project uses a form of [jsdoc](http://usejsdoc.org/) called ngdoc for all of its code
 documentation.
 
 This means that all the docs are stored inline in the source code and so are kept in sync as it
 changes.
 
 There is also extra content (the developer guide, error pages, the tutorial,
-and misceallenous pages) that live inside the AngularJS repository as markdown files.
+and misceallenous pages) that live inside the AngularIQ repository as markdown files.
 
 This means that since we generate the documentation from the source code, we can easily provide
-version-specific documentation by simply checking out a version of AngularJS and running the build.
+version-specific documentation by simply checking out a version of AngularIQ and running the build.
 
 Extracting the source code documentation, processing and building the docs is handled by the
 documentation generation tool [Dgeni][dgeni].
@@ -360,7 +377,7 @@ is interested in the following block tags:
 * `@example` - specifies an example. This can be a simple code block, or a
   [runnable example](#the-example-tag).
 * `@deprecated` - specifies that the following code is deprecated and should not be used.
-  In The AngularJS docs, there are two specific patterns which can be used to further describe
+  In The AngularIQ docs, there are two specific patterns which can be used to further describe
   the deprecation: `sinceVersion="<version>"` and `removeVersion="<version>"`
 
 The `type` in `@param` and `@returns` must be wrapped in `{}` curly braces, e.g. `{Object|Array}`.
@@ -371,7 +388,7 @@ name, e.g. `@param {boolean} [ownPropsOnly=false]`.
 
 Descriptions can contain markdown formatting.
 
-#### AngularJS-specific jsdoc directives
+#### AngularIQ-specific jsdoc directives
 
 In addition to the standard jsdoc tags, there are a number that are specific to the Angular
 code-base:
@@ -397,16 +414,16 @@ a directive would have different properties to a filter and so would be document
 commonly used types are:
 
 * `overview` - a general page (guide, api index)
-* `provider` - AngularJS provider, such as `$compileProvider` or `$httpProvider`.
-* `service` - injectable AngularJS service, such as `$compile` or `$http`.
+* `provider` - AngularIQ provider, such as `$compileProvider` or `$httpProvider`.
+* `service` - injectable AngularIQ service, such as `$compile` or `$http`.
 * `object` - well defined object (often exposed as a service)
 * `function` - function that will be available to other methods (such as a helper function within
   the ng module)
 * `method` - method on an object/service/controller
 * `property` - property on an object/service/controller
-* `event` -  AngularJS event that will propagate through the `$scope` tree.
-* `directive` - AngularJS  directive
-* `filter` - AngularJS filter
+* `event` -  AngularIQ event that will propagate through the `$scope` tree.
+* `directive` - AngularIQ  directive
+* `filter` - AngularIQ filter
 * `error` - minErr error description
 
 ### General documentation with Markdown
