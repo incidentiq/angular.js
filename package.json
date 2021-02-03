@@ -1,6 +1,6 @@
 {
   "name": "@incidentiq/angulariq",
-  "version": "2.0.1",
+  "version": "2.0.2",
   "description": "Incident IQ next generation of angular",
   "license": "MIT",
   "branchVersion": "^1.8.0",
@@ -10,6 +10,10 @@
     "type": "git",
     "url": "https://github.com/incidentiq/angularIQ.git"
   },
+  "main": "build/angular.js",
+  "files": [
+    "build"
+  ],
   "engines": {
     "node": ">=12.14.1",
     "yarn": ">=1.21.1",

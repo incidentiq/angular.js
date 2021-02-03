@@ -121,6 +121,9 @@ yarn install
 # Build AngularIQ:
 yarn grunt package
 
+# Navigate to build
+cd build
+
 # Publish to npm
 npm publish --access public
 ```
