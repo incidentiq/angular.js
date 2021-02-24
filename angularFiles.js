@@ -9,6 +9,7 @@ var angularFiles = {
     'src/stringify.js',
     'src/AngularPublic.js',
     'src/jqLite.js',
+	'src/eventEmitter.js',
     'src/apis.js',
 
     'src/auto/injector.js',
@@ -22,6 +23,7 @@ var angularFiles = {
     'src/ng/compile.js',
     'src/ng/controller.js',
     'src/ng/document.js',
+	'src/ng/events.js',
     'src/ng/exceptionHandler.js',
     'src/ng/forceReflow.js',
     'src/ng/http.js',

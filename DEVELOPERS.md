@@ -121,8 +121,8 @@ yarn install
 # Build AngularIQ:
 yarn grunt package
 
-# Navigate to build
-cd build
+# update build version
+> edit package.json and change version
 
 # Publish to npm
 npm publish --access public

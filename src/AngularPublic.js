@@ -97,7 +97,9 @@
   $$RAFProvider,
   $WindowProvider,
   $$jqLiteProvider,
-  $$CookieReaderProvider
+  $$CookieReaderProvider,
+
+  $EventsProvider,
 */
 
 
@@ -270,7 +272,9 @@ function publishExternalAPI(angular) {
         $$rAF: $$RAFProvider,
         $$jqLite: $$jqLiteProvider,
         $$Map: $$MapProvider,
-        $$cookieReader: $$CookieReaderProvider
+        $$cookieReader: $$CookieReaderProvider,
+
+		$events: $EventsProvider
       });
     }
   ])
