@@ -12,7 +12,7 @@ function $EventsProvider() {
 	var instanceCount = 0;
 	var instances = {};
 
-    function createInstance(instanceName) {
+	function events(instanceName) {
 
 		//increase instance count by
 		var instanceIndex = ++instanceCount;
@@ -21,44 +21,43 @@ function $EventsProvider() {
 		// .. used to make sure subscription is uniquely
 		instanceName = instanceName || instanceIndex.toString();
 
+		//is destroyed
+		var isDestroyed = false;
+
+		//Emitter Source
+		var emitter = new EventEmitter();
+
 		//object with methods / properties
 		var e = {
 
 			//properties
 			instanceName: instanceName,
-			emitter: new EventEmitter(),
-
-			//Private Methods
+			emitter: emitter,
 
 			//Public Methods
-			// .. create a new instance
-			$new: function(name) {
-				return createInstance(name);
-			},
-
-			//destroy current instance or named instance
-			$destroy: function(name) {
-				delete instances[name || instanceName];
-			},
-
-			//get current instance or a named instance
-			$get: function(name) {
-				return instances[name || instanceName];
+			//destroy current instance
+			destroy: function() {
+				isDestroyed = true;
+				delete instances[instanceName];
 			},
 
 			//add event subscribtion
 			on: function(e, f) {
-				return this.emitter.on(e,f);
+				return emitter.on(e,f);
 			},
 
 			//remove event subscription
 			off: function(e, f) {
-				return this.emitter.off(e,f);
+				return emitter.off(e,f);
 			},
 
 			//trigger event
 			trigger: function(e, d) {
-				return this.emitter.trigger(e,[d]);
+
+				if (isDestroyed)
+					throw new Error('This event handler has been destroyed');
+
+				return emitter.trigger(e,[d]);
 			}
 
 		};
@@ -72,8 +71,32 @@ function $EventsProvider() {
 	}
 
 	//return default instance
-	var globalEvents = createInstance('global');
-	return globalEvents();
+	var global = events('global');
+
+	//global methods
+	// .. create a new instance
+	events.$new = function(name) {
+		return events(name);
+	};
+
+	//destroy current instance or named instance
+	events.$destroy = function(name) {
+		var o = events.$get(name);
+		if(o)
+			o.destroy();
+	};
+
+	//get current instance or a named instance
+	events.$get = function(name) {
+		return instances[name];
+	};
+
+	events.on = global.on;
+	events.off = global.off;
+	events.trigger = global.trigger;
+
+	
+	return events;
 
   }];
 }
